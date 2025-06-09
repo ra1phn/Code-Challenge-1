@@ -6,16 +6,19 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+// Function to estimate transaction fee based on the amount to send
 function estimateTransactionFee(amountToSend) {
-    const transactionCost = 0.015 * amountToSend;
-    const totalAmount = amountToSend + transactionCost;
+    const transactionCost = 0.015 * amountToSend; // 1.5% transaction fee
+    const totalAmount = amountToSend + transactionCost; // Total amount including fee
 
+    // If calculated fee is less than 10 apply minimum fee
     if (transactionCost < 10) {
         return [
             `Sending KES ${amountToSend}:`,
             `Minimum Transaction Fee Applied: KES 10`,
             `Total amount to be debited: KES ${amountToSend + 10}`
         ];
+    // If calculated fee is more than 70 apply max fee of 70
     } else if (transactionCost > 70) {
         return [
             `Sending KES ${amountToSend}:`,
@@ -24,6 +27,7 @@ function estimateTransactionFee(amountToSend) {
         ];
     }
 
+    // Otherwise, use the calculated fee
     return [
         `Sending KES ${amountToSend}:`,
         `Calculated Transaction Fee: KES ${transactionCost.toFixed(2)}`,
@@ -31,14 +35,16 @@ function estimateTransactionFee(amountToSend) {
     ];
 }
 
+// Prompt user for the amount to send
 rl.question('Unatuma Ngapi?: ', (input) => {
-    const amountToSend = parseFloat(input);
-    if (isNaN(amountToSend)) {
-        console.log("Tafadhali andika namba halali.");
+    const amountToSend = parseFloat(input); // Parse user input to a number
+    if (isNaN(amountToSend)) { // Validate input
+        console.log("Tafadhali andika namba halali."); // Inform user of invalid input
         rl.close();
         return;
     }
 
+    // Output the fee estimation
     console.log(estimateTransactionFee(amountToSend).join('\n'));
-    rl.close();
+    rl.close(); // Close the readline interface
 });
