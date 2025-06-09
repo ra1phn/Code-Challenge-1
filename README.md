@@ -21,11 +21,11 @@ I wrote a JavaScript function named `calculateChaiIngreditents` that:
 * **User is prompted:** `Karibu! How many cups of Chai Bora would you like to make?`
 * **User enters:** `3`
 * **Console Output:**
-`To make 3 cups of Kenyan Chai, you will need:
-Water: 600 ml
-Milk: 150 ml
-Tea Leaves (Majani): 3 tablespoons
-Sugar (Sukari): 6 teaspoons
-
-Enjoy your Chai Bora!`
+> To make 3 cups of Kenyan Chai, you will need:
+> Water: 600 ml
+> Milk: 150 ml
+> Tea Leaves (Majani): 3 tablespoons
+> Sugar (Sukari): 6 teaspoons
+>
+>Enjoy your Chai Bora!
 
