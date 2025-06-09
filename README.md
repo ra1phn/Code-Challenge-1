@@ -116,5 +116,5 @@ I wrote a JavaScript function named `estimateTransactionFee` that:
   > Sending KES 8000:  
   > Calculated Transaction Fee: KES 70  
   > Total amount to be debited: KES 8070  
-  >  
+  > 
   > Send Money Securely!
