@@ -1,5 +1,5 @@
 # Code-Challenge-1
-
+---
 ## Chai Ingredients Project
 
 This challenge involves creating a simple calculator to determine the basic ingredients needed to make a specific number of cups of Kenyan chai.
